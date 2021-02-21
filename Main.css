@@ -1,0 +1,218 @@
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #3d5585;
+  margin: 0;
+    padding: 0;
+    }
+.nav-list{
+    display: flex;
+    margin-right: 2%;
+  
+}
+
+.nav-list a {
+    display: block;
+    font-size: 18px;
+    padding: 15px;
+
+}
+.nav-list a:hover {
+    background: #2e3b47;
+
+}
+
+a {
+    text-decoration: none;
+    color: white;
+  
+}
+a:hover {
+  box-shadow: 0 0 0 2pt gray;
+
+}
+
+li {
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-family: 'Nunito', sans-serif; !important;
+  color: white;
+  
+}
+
+#welcome-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000;
+  background: linear-gradient(-45deg, #ee7752, #647cde, #23a6d1, #545699);
+	background-size: 400% 400%;
+  animation-name: gradprog;
+  animation-duration: 15s;
+  transition-timing-function: cubic-bezier(0.42,0,0.58,1);
+  animation-iteration-count:infinite;
+  font-size: 30px;
+  font-family: 'Source Code Pro', monospace;
+  font-weight: 300;
+  font-style: italic;
+}
+@keyframes gradprog {
+0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+
+
+h1{
+  font-size: 90px;
+font-family: 'Nunito', sans-serif; !important;
+  font-style: normal;
+
+}
+
+h2{
+  font-size: 60px;
+font-family: 'Source Code Pro', monospace; !important;
+ border-bottom: 0.2rem solid white;
+  max-width: 700px;
+  font-weight: 400;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+      margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+}
+
+#projects{
+      text-align: center;
+    padding: 1rem 8rem;
+   
+  background: #2c547d;
+  
+ 
+  
+}
+.projects-section-header{
+  font-size:38px;
+  
+  
+}
+
+.project-title {
+    font-size: 2rem;
+    padding: 2rem 0.5rem;
+  
+}
+.project-image {
+    width: 100%;
+    object-fit: cover;
+}
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 4rem;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    margin-bottom: 6rem;
+    marigin-top:2rem;
+   
+  
+}
+img{ 
+  border-top-left-radius: 8px;
+border-top-right-radius: 8px;
+}
+.project {
+    background: #2e3b47;
+    box-shadow: 1px 1px 2px rgb(0 0 0 / 50%);
+   
+    border-radius: 8px;
+}
+
+.contact-section{
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 80vh;
+
+    background: #2e3b47;
+}
+
+.contact-section-header{
+    font-size: 32px;
+font-family: 'Nunito', sans-serif; !important;
+  font-style: normal;
+font-weight: 300;
+  
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 980px;
+    margin-top: 4rem;
+  flex-wrap: wrap;}
+  
+.contact-details {
+    font-size: 1.4rem;
+    text-shadow: 2px 2px 1px #1f1f1f;
+    transition: transform 0.3s ease-out;
+}
+
+.fab {
+    font-family: "Font Awesome 5 Brands";
+}
+.btn{
+  padding:20px;
+}
+
+@media (min-width: 831px)
+body {
+    position: relative;
+    height: auto;
+    min-height: 100vh;
+}
+#projects{
+      text-align: center;
+    padding: 1rem 1rem;
+   
+  background: #2c547d;
+  
+ 
+  
+}
+    
+   
+   
