@@ -1,0 +1,631 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>More of DIY</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="03ffd6ee-ccdd-45a0-bc78-69cf05342eba" class="page sans"><header><img class="page-cover-image" src="https://upload.wikimedia.org/wikipedia/commons/d/df/Leonardo_da_Vinci_-_Ambrosiana-Codice-Atlantico-Codex-Atlanticus-f-1069-recto.jpg" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">👨‍🔬</span></div><h1 class="page-title">More of DIY</h1></header><div class="page-body"><p id="89f36504-d268-4ea9-a2e8-8a73b67d9dbb" class="">More pictures from my diy projects</p><h2 id="5cda156e-16ec-4098-8a6f-ee8384135267" class="">Custom passive speakers (wooden box, crossover, custom coils)</h2><div id="c2d7c8fe-8242-4324-9c99-83aafcfe8e0c" class="column-list"><div id="98b26df9-a298-45a9-b9ab-0a19d86a52a4" style="width:37.5%" class="column"><p id="30884140-4fe4-4baa-bb0d-0747cd361442" class="">Box decorates room and responsible for acoustics</p><figure id="e6b97423-5831-413f-b02b-15d8016a72d1" class="image"><a href="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/127993077_195420815500728_1609190303150219440_n.png"><img style="width:192px" src="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/127993077_195420815500728_1609190303150219440_n.png"/></a></figure><p id="51260168-ade5-4616-8c30-cdc3cde2fc83" class="">Sketchup drawing for better calculations of dimensions</p><figure id="69da9b83-5272-4f34-a05c-6ee1ead85e3e" class="image"><a href="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/127747356_1063171150813775_9087812874675949999_n.png"><img style="width:336px" src="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/127747356_1063171150813775_9087812874675949999_n.png"/></a></figure></div><div id="ce0eebfd-dc82-405f-a8ca-bf57ecfc444b" style="width:41.666666666666664%" class="column"><p id="1ea6c938-2b5f-4c99-9554-a8a51e0b3bb7" class="">Crossover splits frequencies for optimal sound output.</p><figure id="577db0be-e12e-43a5-9bc3-24defb89f6aa" class="image"><a href="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/130685372_442006627196330_7055645433926898097_n.png"><img style="width:192px" src="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/130685372_442006627196330_7055645433926898097_n.png"/></a></figure><p id="4d94038d-2b4d-483d-928e-bd599f9d3fd7" class="">Using <a href="https://www.diyaudio.com/forums/software-tools/259865-xsim-free-crossover-designer.html">free software</a> to calculate frequency cut and needed components (capacitors, resistors)</p><figure id="278ff4de-8dc1-45da-896a-a9935c1a9e1c" class="image"><a href="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/129725239_920594485138988_8542106055497732696_n.png"><img style="width:240px" src="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/129725239_920594485138988_8542106055497732696_n.png"/></a></figure><p id="a6ae163f-c503-4891-9035-7395607d1b58" class="">
+</p></div><div id="e22ae01d-3e13-4e3d-9f05-50eb0cb26060" style="width:20.833333333333357%" class="column"><p id="47e7a695-d0c2-4091-b207-f00a09ad10cc" class="">Inside of one speaker</p><figure id="770b64cf-daaf-4e73-956b-ffcc0f8d2b98" class="image"><a href="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/131022203_879722812855369_3728465041221483543_n.jpg"><img style="width:1080px" src="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/131022203_879722812855369_3728465041221483543_n.jpg"/></a></figure><p id="b6954e74-4002-4015-83e2-767bd6b0e6c6" class=""><a href="https://www.aliexpress.com/item/32505904819.html?spm=a2g0s.9042311.0.0.27424c4d1qJ8Mh">Ribbon tweeter </a>shown to produce quality high frequency sounds.</p><figure id="68e578f2-a9c3-41f8-b895-a779220dcda3" class="image"><a href="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/125332448_718386385446749_9002964143625804014_n.png"><img style="width:240px" src="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/125332448_718386385446749_9002964143625804014_n.png"/></a></figure></div></div><div id="46d9622f-e95e-405b-80f5-bcd88253931e" class="column-list"><div id="14bf4b27-41fa-471a-bdbf-79c8ce0aaff2" style="width:52.380952380952394%" class="column"><p id="36b4df28-e107-438e-bf92-7946387e5bae" class="">Using acid to oxidize copper platting</p><figure id="3ec9ba5e-b1b3-4e1e-bdbb-48efe90c69ec" class="image"><a href="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/130307243_1337132649963836_4424657263179732181_n.png"><img style="width:240px" src="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/130307243_1337132649963836_4424657263179732181_n.png"/></a></figure><figure id="637d2af0-875e-477d-b160-7bf52e63a43b" class="image"><a href="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/130196082_399874797921733_5014974141033817648_n.jpg"><img style="width:336px" src="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/130196082_399874797921733_5014974141033817648_n.jpg"/></a></figure><p id="791550f4-37c2-44ad-b42b-82930c8daaf4" class="">Regluing speaker membrane (speaker from broken night club broken speaker)</p><figure id="a296aacc-d6f1-43d1-8c4c-9721e97bc604" class="image"><a href="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/122899627_4029522150397634_7964647677784932858_n.jpg"><img style="width:336px" src="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/122899627_4029522150397634_7964647677784932858_n.jpg"/></a></figure></div><div id="4ef2fad2-cc07-4bc4-95af-a3c687d2a39b" style="width:47.61904761904763%" class="column"><p id="6988beaa-7ff3-437d-83d5-d2b8565c238e" class="">Turning wire into coil to produce &quot;Henries&quot;</p><figure id="4f78766e-80d6-4bce-9f21-b76684030c06" class="image"><a href="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/130926058_1492872141104157_714589155103975231_n.png"><img style="width:192px" src="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/130926058_1492872141104157_714589155103975231_n.png"/></a></figure><p id="5b030d58-334e-41d8-bc02-8f38106d53c7" class="">Calculating turns wire with <a href="https://coil32.net/download-coil64-for-windows.html">free software</a></p><figure id="daee1840-d4ea-47c9-ab88-677a2bff8511" class="image"><a href="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/130855048_1385375178461591_5628917127025260007_n.png"><img style="width:384px" src="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/130855048_1385375178461591_5628917127025260007_n.png"/></a></figure><p id="c741938d-af80-4dcd-8f42-c906af681956" class="">Turns has to be orthocyclic for optimal energy consuption</p><figure id="11b6d871-35e9-4549-a56b-74af78da0da7" class="image"><a href="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/130780260_207723004246375_6949292225327284271_n.png"><img style="width:704px" src="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/130780260_207723004246375_6949292225327284271_n.png"/></a></figure><p id="e2fce459-818c-4f77-9310-1950ac1fc2bb" class="">Testing stage before crossover were produced</p><figure id="850f1be1-36c5-4cb1-9f6e-414310ce0d3e"><div class="source"><a href="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/video-1607181260.mp4">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c224ae02-08e3-4831-a760-613136513bbf/video-1607181260.mp4</a></div></figure><p id="71130e16-3950-487a-899b-68edcd7df00c" class="">
+</p></div></div><h2 id="10bbe31d-a4fd-403a-aba8-7f881648d0da" class="">Testing custom DC power supply</h2><div id="17c0ce23-e06e-42bd-a2bd-79e3923b2eed" class="column-list"><div id="842d707a-4f0e-4153-908c-226fbb5f22de" style="width:31.25%" class="column"><h2 id="2d24a8f3-d0b8-4a1c-a5f7-caa69bb37b42" class="">My oscilloscope</h2><figure id="aad41976-bd4c-47b2-869d-019a9e770dcb" class="image"><a href="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/135865440_699797087348477_1481204599488906431_n.png"><img style="width:336px" src="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/135865440_699797087348477_1481204599488906431_n.png"/></a></figure><p id="973b9497-6383-4cf4-a2c5-9244b5b721fa" class="">Cheap audio amp</p><figure id="036ccd02-050c-4046-9594-bb543d9fcdd0" class="image"><a href="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/124550707_2359873280823886_6610458912843005542_n.png"><img style="width:384px" src="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/124550707_2359873280823886_6610458912843005542_n.png"/></a></figure></div><div id="78d2f4af-4ae3-4c7a-a5d5-49158ddb269e" style="width:68.75%" class="column"><p id="211387ce-161c-4f17-9a91-01473497894c" class="">Also testing inexpensive audio amplifier. Funny thing, it later got on fire. Lesson - heat-synch on audio transistors always required. And lower voltage is recommended. </p><figure id="ee4bcdad-4a1d-4ea0-8d63-c891838afcfa"><div class="source"><a href="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/video-1605051061.mp4">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/17dadb10-9e41-47c2-b2a5-7e702fa47aff/video-1605051061.mp4</a></div></figure></div></div><p id="980196ca-095f-4743-823b-d4f12745e48e" class="">Basic AC 220 to DC conversion. All testing has to be done with caution.</p><div id="117540af-97b1-4f31-b9b7-68a2f7832f37" class="column-list"><div id="fc2ed3d3-53d8-451c-bdfc-625f5ca75e79" style="width:62.5%" class="column"><p id="be48a22e-69e3-4cae-8049-a4cb7201942c" class="">Board were reverse engineered from broken audio amplifier.</p><figure id="94f7e175-f4a5-4bcd-be06-f0faba239911" class="image"><a href="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/Untitled.png"><img style="width:384px" src="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/Untitled.png"/></a></figure></div><div id="680eb05d-50ce-459b-ad8a-af55ac2fca2a" style="width:37.5%" class="column"><figure id="0d483e03-6d42-455e-9570-8fc02bd17cba" class="image"><a href="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/124555239_360866634987527_6665029571086748711_n.jpg"><img style="width:336px" src="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/124555239_360866634987527_6665029571086748711_n.jpg"/></a></figure></div></div><h2 id="79dcabb1-32d3-4b92-8bbf-474b1f62d91d" class=""><a href="https://github.com/NicoHood/HID">HID devices</a></h2><p id="b60c3cfa-387e-4599-b696-a841acb09833" class="">Arduino can be used to read inputs and linking inputs for software as Virtual DJ or &quot;midi friendly&quot; media software.</p><figure id="837983f5-49d6-4b93-aba6-be2627725f58"><div class="source"><a href="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/video-1576002376_(1).mp4">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b91cf088-3fa7-41de-910d-e8729eca6dee/video-1576002376_(1).mp4</a></div></figure><p id="7b9cc0df-74c0-4bf2-bf98-8048b5a2fec2" class="">Arduino can have it&#x27;s inputs get triggered by basic analogue electric inputs. It can also measure position of &quot;knobs&quot; as their resistance changes when they are turned.</p><figure id="4a200590-8539-4beb-8f20-27c3cf380332" class="image"><a href="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/182010285_1184395465340637_5924048992981435489_n.jpg"><img style="width:480px" src="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/182010285_1184395465340637_5924048992981435489_n.jpg"/></a></figure><p id="4c30bd73-b12a-4b59-a2e5-83272e6e010f" class="">Multiplexer is a technique for combining inputs to make more inputs. It is cost efficient but might make button some combinations unavailable to be pressed at the same time.</p><figure id="6043817b-8c35-4766-ab51-7bb67664ac88" class="image"><a href="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/79667991_552480935546551_1848358309912903680_n.png"><img style="width:480px" src="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/79667991_552480935546551_1848358309912903680_n.png"/></a></figure><h2 id="eb085c1a-7f47-4395-9b38-5010cfe2f4eb" class=""><a href="https://github.com/adafruit/Adalight">Adalight diy</a></h2><p id="dec560a8-f8ef-4e24-b785-052c7d0a6415" class="">Multiplexer technique can be used to reduce costs and combine maximum possible buttons, faders or other control inputs.</p><p id="b8c14c40-217e-4f39-8a20-7a1809e0eefa" class="">Arduino receives from pc binary 800 kbps code and translates it into electrical output for WS2812 addressable led&#x27;s. Encoding is described online in <a href="https://cdn-shop.adafruit.com/datasheets/WS2812.pdf">datasheets</a>. Every led has chip  </p><div id="bd04bd6e-bd19-4e92-bede-608493bb28fb" class="column-list"><div id="9b4df509-bfc9-4da1-8183-d2f895cd2817" style="width:62.5%" class="column"><figure id="120496f0-b7f9-4a8f-900c-59c4da74307c"><div class="source"><a href="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/video-1604771331.mp4">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/44e2bd2b-01ed-42b6-a902-80929136c539/video-1604771331.mp4</a></div></figure><figure id="2e3da1b4-889c-4093-96b2-ec8aff30c617"><div class="source"><a href="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/video-1604770818.mp4">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/62d39855-5f10-465e-a2d9-5eeb909d16c9/video-1604770818.mp4</a></div></figure></div><div id="6195cdda-0faa-4624-a490-17274b132e66" style="width:37.49999999999999%" class="column"><figure id="cb0bf457-8222-4f04-acab-b0f385df5d31" class="image"><a href="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/123869686_435665751166790_9055015408797596890_n.png"><img style="width:288px" src="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/123869686_435665751166790_9055015408797596890_n.png"/></a></figure></div></div><h2 id="8863cb61-f1aa-4a50-9ab7-d6efaf64e579" class="">Outdoor advertisement and more Arduino relay switchers</h2><div id="eb662dd9-200d-4016-94e7-f70d0902abe4" class="column-list"><div id="923ac303-4a8f-42ce-83e3-78773bc685d0" style="width:56.25%" class="column"><figure id="a8425bc0-332b-4ef6-9c3e-bf7ad7ea4974"><div class="source"><a href="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/video-1591105952.mp4">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b12c0af6-4091-4c25-9359-aa9167e91c36/video-1591105952.mp4</a></div></figure><p id="833549bf-86c8-44c4-bc00-b705693683d3" class="">Linking arduino relay to wifi local host.</p><figure id="fb531f38-757b-40c1-832c-a01e9f973c1b"><div class="source"><a href="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/video-1516283103.mp4">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/70e31d39-0010-4457-94b3-8b8986d2487b/video-1516283103.mp4</a></div></figure></div><div id="38dcb7c0-e2b5-46ca-9bee-cbf32d303e9a" style="width:43.75000000000001%" class="column"><figure id="c3b98e15-e3b4-4cf7-8bc6-1ed2f6045869" class="image"><a href="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/99432049_695091437971007_1289099399846166528_n.jpg"><img style="width:384px" src="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/99432049_695091437971007_1289099399846166528_n.jpg"/></a></figure><p id="10ff9dc2-1328-4f6f-8aab-7bb04913b7b9" class="">Many years before (that is me young), experimenting with wifi arduino connection</p><figure id="be25ff61-385f-44ae-bb5f-39142bd14b3b"><div class="source"><a href="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/video-1516819072.mp4">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/161cd8e2-295a-4d06-a2e2-5b2c53c96233/video-1516819072.mp4</a></div></figure></div></div><h2 id="8c404cb5-a0c3-4ec1-8a00-a5abbd177297" class="">HTML CSS basic page (FreeCodeCamp)</h2><p id="d674cd49-7817-449d-994b-32354d4f7940" class=""><a href="https://edvinas1122.github.io/portfolio/?fbclid=IwAR1KO2A5oBWlZTf1yX_chVRSb9g4rvm_A3Z6Xvc2CULVkeLlliK5PPSa3E0">Example of basic html css page hosted on github</a></p><figure id="c37253d8-ba7c-4549-bb69-1f35510baafd" class="image"><a href="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/151210279_458900118596790_9024296884581982587_n.png"><img style="width:1920px" src="More%20of%20DIY%20e6b974235831413fb02b15d8016a72d1/151210279_458900118596790_9024296884581982587_n.png"/></a></figure><p id="f0c8510d-e054-42bc-aef5-655c0ae5a2b4" class="">
+</p></div></article></body></html>
